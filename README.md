@@ -1,0 +1,2 @@
+# Tech
+JANGAN ABUSE AJG
